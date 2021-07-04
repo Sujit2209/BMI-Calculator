@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:background="#EDF6E5">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/app_name"
+        android:paddingLeft="50dp"
+        android:textSize="35sp"
+        android:textColor="@color/text_color"
+        android:textStyle="bold"
+        android:fontFamily="@font/courgette_regular"
+        android:gravity="center_vertical"
+        android:layout_margin="40dp"
+        android:id="@+id/title"/>
+
+    <TextView
+        android:id="@+id/NameText"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:layout_below="@+id/title"
+        android:fontFamily="@font/courgette_regular"
+        android:layout_marginTop="14dp"
+        android:textColor="@color/text_color"
+        android:textStyle="bold"
+        android:layout_marginBottom="0dp"
+        android:gravity="center_horizontal"
+        android:paddingTop="30dp"
+        android:text="@string/name_tag"
+        android:textAlignment="center"
+        android:textSize="30sp" />
+
+    <EditText
+        android:layout_width="300dp"
+        android:layout_marginLeft="70dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/NameText"
+        android:id="@+id/EnterName"
+        android:layout_marginTop="-45dp"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:fontFamily="@font/courgette_regular"
+        android:hint="@string/hint_text"/>
+    <TextView
+        android:layout_width="300dp"
+        android:layout_height="100dp"
+        android:layout_below="@+id/EnterName"
+        android:layout_marginTop="70dp"
+        android:text="@string/gender_tag"
+        android:textSize="30sp"
+        android:textColor="@color/text_color"
+        android:textStyle="bold"
+        android:id="@+id/Gender"
+        android:fontFamily="@font/courgette_regular"
+        android:paddingTop="20dp"
+        android:textAlignment="center"
+        android:layout_marginLeft="50dp"/>
+
+    <ImageView
+        android:layout_width="95dp"
+        android:layout_height="105dp"
+        android:layout_below="@id/Gender"
+        android:layout_marginTop="-30dp"
+        android:src="@drawable/maleicon"
+        android:id="@+id/male"
+        android:layout_marginLeft="70dp"/>
+
+    <ImageView
+        android:layout_width="73dp"
+        android:layout_height="78dp"
+        android:layout_below="@id/Gender"
+        android:layout_marginLeft="230dp"
+        android:layout_marginTop="-12dp"
+        android:id="@+id/female"
+        android:src="@drawable/femaleicon" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:text="@string/male_gender"
+        android:id="@+id/maletext"
+        android:layout_below="@+id/male"
+        android:textColor="@color/black"
+        android:paddingLeft="100dp"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/female_gender"
+        android:textSize="20sp"
+        android:id="@+id/femaletext"
+        android:textColor="@color/black"
+        android:layout_below="@id/female"
+        android:paddingLeft="240dp"
+        android:paddingTop="8dp"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/male"
+        android:layout_marginLeft="150dp"
+        android:layout_marginTop="60dp"
+        android:background="@drawable/button"
+        android:text="@string/submit_tag"
+        android:textSize="20sp"
+        android:id="@+id/submit_tag"
+        android:fontFamily="@font/courgette_regular"
+        app:backgroundTint="@color/button_color" />
+</RelativeLayout>

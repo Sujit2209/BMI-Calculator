@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">BMI Calculator</string>
+    <string name="name_tag">Name</string>
+    <string name="hint_text">Enter Your Name</string>
+    <string name="gender_tag">Gender</string>
+    <string name="male_gender">Male</string>
+    <string name="female_gender">Female</string>
+    <string name="submit_tag">Submit</string>
+</resources>
