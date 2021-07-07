@@ -68,7 +68,7 @@
         android:layout_height="105dp"
         android:layout_below="@id/Gender"
         android:layout_marginTop="-30dp"
-        android:src="@drawable/maleicon"
+        android:src="@drawable/maleicon_light"
         android:id="@+id/male"
         android:layout_marginLeft="70dp"/>
 
@@ -79,27 +79,25 @@
         android:layout_marginLeft="230dp"
         android:layout_marginTop="-12dp"
         android:id="@+id/female"
-        android:src="@drawable/femaleicon" />
+        android:src="@drawable/femaleicon_light" />
     <TextView
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="20sp"
-        android:text="@string/male_gender"
-        android:id="@+id/maletext"
+        android:id="@+id/maleText"
         android:layout_below="@+id/male"
-        android:textColor="@color/black"
-        android:paddingLeft="100dp"/>
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/female_gender"
+        android:text="Male"
         android:textSize="20sp"
-        android:id="@+id/femaletext"
         android:textColor="@color/black"
-        android:layout_below="@id/female"
-        android:paddingLeft="240dp"
-        android:paddingTop="8dp"/>
-
+        android:layout_marginLeft="85dp"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/femaleText"
+        android:layout_below="@+id/male"
+        android:text="Female"
+        android:textSize="20sp"
+        android:textColor="@color/black"
+        android:layout_marginLeft="245dp"/>
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

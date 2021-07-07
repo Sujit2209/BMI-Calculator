@@ -9,42 +9,50 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.RadioButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
-    String name;
-    String gender;
+    String name="";
+    String gender="";
+    ImageView maleicon;
+    ImageView femaleicon;
+    TextView maleText;
+    TextView femaleText;
+    EditText name_enter;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        final Button submit_button =(Button)findViewById(R.id.submit_tag);
-        final EditText name_enter =(EditText) findViewById(R.id.EnterName);
-        final ImageView female_gender =(ImageView) findViewById(R.id.female);
-        final ImageView male_gender =(ImageView) findViewById(R.id.male);
+         Button submit_button =(Button)findViewById(R.id.submit_tag);
+         name_enter =(EditText) findViewById(R.id.EnterName);
+         maleicon=(ImageView) findViewById(R.id.male);
+         femaleicon=(ImageView) findViewById(R.id.female);
+         maleText=(TextView) findViewById(R.id.maleText);
+         femaleText=(TextView) findViewById(R.id.femaleText);
 
-        female_gender.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                gender = "female";
-            }
-        });
-        male_gender.setOnClickListener((new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                gender = "male";
-            }
-        }));
+         femaleicon.setOnClickListener(new View.OnClickListener() {
+             @Override
+             public void onClick(View v) {
+                 femaleGender();
+             }
+         });
+
+         maleicon.setOnClickListener(new View.OnClickListener() {
+             @Override
+             public void onClick(View v) {
+                 maleGender();
+             }
+         });
+
         submit_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                name = name_enter.getText().toString();
-                if (name == "") {
-                    Toast.makeText(MainActivity.this, "Enter Your Name", Toast.LENGTH_SHORT).show();
-                } else if (gender == "") {
-                    Toast.makeText(MainActivity.this, "Select the Gender", Toast.LENGTH_SHORT).show();
+                name=getName();
+                if (name.isEmpty() || gender.isEmpty()) {
+                    Toast.makeText(MainActivity.this, "Enter the details", Toast.LENGTH_SHORT).show();
                 } else {
                     Intent i = new Intent(MainActivity.this, bmiresult.class);
                     i.putExtra("username",name);
@@ -53,5 +61,19 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
+    }
+    public void femaleGender(){
+        gender="Female";
+        femaleicon.setImageResource(R.drawable.femaleicon);
+        maleicon.setImageResource(R.drawable.maleicon_light);
+    }
+    public void maleGender(){
+        gender="Male";
+        femaleicon.setImageResource(R.drawable.femaleicon_light);
+        maleicon.setImageResource(R.drawable.maleicon);
+    }
+    public String getName(){
+        String name=name_enter.getText().toString();
+        return name;
     }
 }
